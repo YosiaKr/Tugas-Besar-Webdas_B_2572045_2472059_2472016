@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Malaysia - Pro</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2b2d42;
+            --box-bg: #ffffff;
+            --primary-blue: #012C78;
+            --primary-red: #CC0001;
+            --accent-gold: #FFD100;
+            --shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .dark-theme {
+            --bg-color: #121212;
+            --text-color: #f1f1f1;
+            --box-bg: #1e1e1e;
+            --shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease; 
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-blue);
+            padding: 15px 5%;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .text-effect {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent-gold), #ffffff);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .nav-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: var(--box-bg);
+            min-width: 180px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .dropdown-content a { 
+            color: var(--text-color); 
+            padding: 15px 20px; 
+            text-decoration: none; 
+            display: block;
+            border-bottom: 1px solid rgba(128,128,128,0.1);
+        }
+        .dropdown-content a:hover { background-color: var(--primary-blue); color: white; }
+        .dropdown:hover .dropdown-content { display: block; opacity: 1; }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 40px;
+            padding: 50px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .detail-card {
+            background: rgba(128,128,128,0.05);
+            border-left: 5px solid var(--primary-red);
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .detail-card h3 { margin-top: 0; color: var(--primary-blue); }
+        .dark-theme .detail-card h3 { color: var(--accent-gold); }
+
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animated-box {
+            animation: slideUpFade 0.8s ease-out forwards;
+            background: var(--box-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: background-color 0.4s ease, transform 0.3s ease;
+        }
+
+        .img-featured {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover { background-color: #a00000; transform: scale(1.05); }
+        .btn-outline { background-color: transparent; border: 2px solid white; }
+
+        .carousel-container { position: relative; width: 100%; overflow: hidden; border-radius: 8px; margin-bottom: 20px; }
+        .carousel-slide { display: none; text-align: center; }
+        .carousel-slide.active { display: block; animation: slideUpFade 0.5s ease-out; }
+        .carousel-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,0.6); color: white; border: none;
+            padding: 15px; cursor: pointer; font-size: 20px; border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .carousel-btn:hover { background: var(--primary-red); }
+        .prev { left: 15px; } .next { right: 15px; }
+
+        .destination-list { list-style: none; padding: 0; margin: 0; }
+        .destination-list li {
+            background: rgba(128,128,128,0.1); margin-bottom: 10px; padding: 15px;
+            border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 1.1em;
+            transition: all 0.3s ease; display: flex; justify-content: space-between;
+        }
+        .destination-list li:hover { background: var(--primary-blue); color: white; padding-left: 25px; }
+
+        .status-list {
+            padding-left: 20px;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .status-list li { margin-bottom: 10px; }
+        .status-list strong { color: var(--primary-blue); }
+        .dark-theme .status-list strong { color: var(--accent-gold); }
+
+        #backToTopBtn {
+            display: none; position: fixed; bottom: 40px; right: 40px;
+            z-index: 99; border-radius: 50%; padding: 15px 20px; font-size: 20px;
+        }
+
+        #homeView { display: block; animation: fadeIn 0.5s ease-in; }
+        #destinationView { 
+            display: none; padding: 50px 5%; max-width: 1100px; margin: 0 auto; 
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid, .details-grid { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; gap: 15px; }
+            .img-featured { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="text-effect" onclick="goHome()">Malaysia</div>
+        <div class="nav-controls">
+            <button class="btn btn-outline" id="themeToggleBtn">🌙 Dark Mode</button>
+            <div class="dropdown">
+                <button class="btn">Menu ▼</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="goHome()">Home</a>
+                    <a href="#">Culture & Heritage</a>
+                    <a href="#">Nature & Parks</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="homeView">
+        <main class="main-grid">
+            
+            <div>
+                <section class="animated-box">
+                    <h2>Discover the Beauty</h2>
+                    <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="" alt="Kuala Lumpur" class="img-featured">
+                            <h3>The Vibrant City of Kuala Lumpur</h3>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="" alt="Penang" class="img-featured">
+                            <h3>Heritage Streets of Penang</h3>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="" alt="Langkawi" class="img-featured">
+                            <h3>Pristine Beaches of Langkawi</h3>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+                    </div>
+                </section>
+
+                <section class="animated-box" style="margin-top: 30px;">
+                    <h2>About Malaysia 🇲🇾</h2>
+                    <p style="line-height: 1.8; font-size: 1.1em;">
+                        Malaysia is a captivating and megadiverse country located in the heart of Southeast Asia. Geographically divided by the South China Sea, it consists of <strong>Peninsular Malaysia</strong> (bordering Thailand and Singapore) and <strong>East Malaysia</strong> (situated on the northern edge of the island of Borneo). Known for its equatorial climate, the country enjoys warm tropical weather year-round, making it a lush haven for some of the world's oldest and most pristine rainforests.
+                    </p>
+                    <p style="line-height: 1.8; font-size: 1.1em;">
+                        At its core, Malaysia is defined by its vibrant cultural mosaic. It is a harmonious melting pot of Malay, Chinese, Indian, and indigenous heritage (such as the Iban and Kadazan-Dusun). This incredible diversity is woven into every aspect of Malaysian life—from its awe-inspiring architecture and colorful religious festivals to its world-renowned culinary scene, widely considered one of the absolute best in Asia.
+                    </p>
+
+                    <hr style="border: 1px solid rgba(128,128,128,0.2); margin: 30px 0;">
+
+                    <h2>🌍 World Tourism Status</h2>
+                    <p style="font-size: 1.1em;">As the government champions the <em>Visit Malaysia 2026</em> campaign, Malaysia continues to dominate as a global travel heavyweight:</p>
+                    <ul class="status-list">
+                        <li><strong>ASEAN Tourism Leader:</strong> Ranked as the most visited destination in Southeast Asia for two consecutive years, outpacing regional competitors.</li>
+                        <li><strong>Eco-Tourism Hub:</strong> Globally recognized for unparalleled biodiversity, featuring UNESCO sites like Kinabalu Park and Gunung Mulu National Park.</li>
+                        <li><strong>Halal Tourism Champion:</strong> Consistently ranks #1 in the Global Muslim Travel Index (GMTI) for world-class Muslim-friendly travel facilities.</li>
+                        <li><strong>Gastronomy Destination:</strong> Cities like Penang and Kuala Lumpur are routinely listed among the top food capitals globally by CNN and the Michelin Guide.</li>
+                        <li><strong>Medical Tourism:</strong> A rapidly growing sector where Malaysia ranks among the top destinations worldwide for highly advanced, affordable healthcare travel.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside>
+                <div class="animated-box" style="position: sticky; top: 100px;">
+                    <h2>Top Destinations</h2>
+                    <p style="font-size: 0.9em; color: gray; margin-bottom: 20px;">Click a location to explore details, food, and hotel recommendations!</p>
+                    
+                    <ul class="destination-list" id="destinationList">
+                        <li data-id="kl">Kuala Lumpur <span>➜</span></li>
+                        <li data-id="penang">Penang <span>➜</span></li>
+                        <li data-id="langkawi">Langkawi <span>➜</span></li>
+                        <li data-id="kinabalu">Mount Kinabalu <span>➜</span></li>
+                        <li data-id="cameron">Cameron Highlands <span>➜</span></li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <div id="destinationView">
+        <button class="btn" onclick="goHome()">⬅️Return to Home</button>
+        
+        <div class="animated-box" style="margin-top: 30px;">
+            <h1 id="detailTitle" style="color: var(--primary-blue); font-size: 2.8em; margin-top: 0;">Title</h1>
+            <img id="detailImage" src="" alt="Destination Image" class="img-featured" style="height: 500px;">
+            <p id="detailDesc" style="font-size: 1.2em; line-height: 1.8; margin-top: 20px;"></p>
+            
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>🍽️ Must-Try Food (With Recommendations)</h3>
+                    <p id="detailFood"></p>
+                </div>
+                <div class="detail-card">
+                    <h3>🏨 Top Hotels</h3>
+                    <p id="detailHotel"></p>
+                </div>
+                <div class="detail-card">
+                    <h3>🏛️ Historical Sites</h3>
+                    <p id="detailHistory"></p>
+                </div>
+                <div class="detail-card">
+                    <h3>📍 Places to Visit</h3>
+                    <p id="detailVisit"></p>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 100px;"></div>
+    </div>
+
+    <button class="btn" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        const destinationData = {
+            "kl": {
+                title: "Kuala Lumpur",
+                img: "",
+                desc: "Kuala Lumpur is the vibrant capital city of Malaysia, seamlessly blending colonial history with futuristic architecture and massive shopping districts.",
+                food: "Nasi Lemak (Try it at 'Village Park Restaurant' in Damansara), Char Kway Teow and street food (Explore the famous 'Jalan Alor' night market).",
+                hotel: "The Mandarin Oriental KL, W Kuala Lumpur, Trader's Hotel.",
+                history: "Sultan Abdul Samad Building, Merdeka Square (where independence was declared).",
+                visit: "Petronas Twin Towers, Batu Caves, KL Tower, Bukit Bintang shopping district."
+            },
+            "penang": {
+                title: "Penang",
+                img: "",
+                desc: "Often known as the food capital of Malaysia, Penang is a spectacular blend of nature, rich colonial history, and a vibrant cultural heritage.",
+                food: "Penang Asam Laksa (Try 'Penang Road Famous Teochew Chendul'), Nasi Kandar (Highly recommend 'Deen Maju' or 'Line Clear').",
+                hotel: "Eastern & Oriental Hotel (Historic luxury), Shangri-La Rasa Sayang Resort.",
+                history: "Fort Cornwallis, Khoo Kongsi clan house, Pinang Peranakan Mansion.",
+                visit: "George Town Street Art, Kek Lok Si Temple, Penang Hill."
+            },
+            "langkawi": {
+                title: "Langkawi",
+                img: "",
+                desc: "Langkawi is an archipelago of 99 islands in the Andaman Sea. Known as the Jewel of Kedah, it boasts pristine beaches and duty-free shopping status.",
+                food: "Fresh Ikan Bakar / Grilled Fish (Try 'Orkid Ria Seafood Restaurant' or 'Hafiz View' for great local flavors).",
+                hotel: "The Datai Langkawi, St. Regis Langkawi, Pelangi Beach Resort.",
+                history: "Mahsuri Tomb & Cultural Centre, Field of Burnt Rice.",
+                visit: "Langkawi Sky Bridge, Kilim Karst Geoforest Park, Eagle Square."
+            },
+            "kinabalu": {
+                title: "Mount Kinabalu (Sabah)",
+                img: "",
+                desc: "Located on the island of Borneo, Mount Kinabalu is the highest peak in Malaysia, surrounded by a world-renowned UNESCO national park teeming with unique biodiversity.",
+                food: "Tuaran Mee (Try 'Kedai Kopi Lok Kyun'), Fresh Seafood (Highly recommend 'Welcome Seafood Restaurant' in Kota Kinabalu).",
+                hotel: "Sutera Sanctuary Lodges, Sabah Tea Resort, Shangri-La Tanjung Aru.",
+                history: "Kundasang War Memorial (Honoring WWII POWs).",
+                visit: "Low's Peak (Summit), Poring Hot Springs, Kinabalu Park Botanical Garden."
+            },
+            "cameron": {
+                title: "Cameron Highlands",
+                img: "",
+                desc: "Escape the tropical heat in the Cameron Highlands! This beautiful hillside area is famous for its sweeping emerald-green tea plantations and cool climate.",
+                food: "Traditional English Scones with fresh strawberry jam (Try the 'Jim Thompson Tea Room'), Hot Steamboat dining (Try 'Ferm Nyonya').",
+                hotel: "Cameron Highlands Resort, The Lakehouse, Strawberry Park Resort.",
+                history: "Time Tunnel Museum (History of the Highlands), Jim Thompson's Mystery Trail.",
+                visit: "Boh Tea Plantation, Mossy Forest, Kea Farm Market."
+            }
+        };
+
+        // return home
+        const homeView = document.getElementById('homeView');
+        const destinationView = document.getElementById('destinationView');
+        const listItems = document.querySelectorAll('#destinationList li');
+        
+        listItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                let locId = this.getAttribute('data-id');
+                
+                let locData = destinationData[locId];
+                
+                document.getElementById('detailTitle').textContent = locData.title;
+                document.getElementById('detailImage').src = locData.img;
+                document.getElementById('detailDesc').innerHTML = locData.desc;
+                document.getElementById('detailFood').innerHTML = locData.food;
+                document.getElementById('detailHotel').innerHTML = locData.hotel;
+                document.getElementById('detailHistory').innerHTML = locData.history;
+                document.getElementById('detailVisit').innerHTML = locData.visit;
+                
+                homeView.style.display = 'none';
+                destinationView.style.display = 'block';
+                window.scrollTo(0, 0); 
+            });
+        });
+
+        function goHome() {
+            destinationView.style.display = 'none';
+            homeView.style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // dark mode option
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+        
+        themeToggleBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                themeToggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                themeToggleBtn.textContent = '🌙 Dark Mode';
+            }
+        });
+
+        // carousel img
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function changeSlide(n) {
+            slides[slideIndex].classList.remove('active');
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            slides[slideIndex].classList.add('active');
+        }
+
+        setInterval(function() { changeSlide(1); }, 5000);
+
+        const topBtn = document.getElementById('backToTopBtn');
+        
+        // back t top
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
