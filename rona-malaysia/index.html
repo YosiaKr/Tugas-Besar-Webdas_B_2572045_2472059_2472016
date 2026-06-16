@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rona Malaysia - website edukatif interaktif tentang sejarah, bahasa, kuliner, seni, dan warisan budaya Malaysia.">
+  <meta name="theme-color" content="#071a2b">
+  <title>Beranda | Rona Malaysia</title>
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Rona Malaysia - Beranda">
+        <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+        <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Aktifkan mode gelap">🌙</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka navigasi" aria-controls="mainNav" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Beranda</a></li>
+          <li><a href="sejarah.html">Sejarah</a></li>
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false">Ragam Budaya ▾</button>
+            <ul class="dropdown-menu">
+              <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+              <li><a href="kuliner.html">Kuliner</a></li>
+              <li><a href="bahasa.html">Bahasa Melayu</a></li>
+            </ul>
+          </li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="interaktif.html">Interaktif</a></li>
+          <li><a href="sumber.html">Sumber</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Selamat datang di Rona Malaysia</span>
+          <h1>Menjelajah <span class="accent">budaya Malaysia</span> dalam satu ruang digital.</h1>
+          <div class="type-line"><span id="typeText"></span><span class="type-cursor">|</span></div>
+          <p>Dari jejak Kesultanan Melaka hingga sajian nasi lemak, temukan cerita tentang sejarah, bahasa, seni, busana, arsitektur, dan kuliner dalam pengalaman web yang interaktif.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="warisan.html">Mulai Menjelajah</a>
+            <a class="btn btn-outline" href="interaktif.html#kuis">Coba Kuis Budaya</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/img/AboutMalaysia.jpg" width="100%" height="auto" style="border-radius: 20px;" alt="Malay">
+          <br><br><br><br><br>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="eyebrow">Satu negara, banyak cerita</span>
+          <h2>Ragam budaya yang saling melengkapi</h2>
+          <p>Malaysia tumbuh melalui perjumpaan berbagai komunitas. Website ini menampilkan beberapa pintu masuk untuk memahami keragaman tersebut secara ringkas dan menarik.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">⌛</div>
+            <h3 class="index-dark">Sejarah</h3>
+            <p>Ikuti garis waktu dari Melaka sebagai pusat perdagangan, kemerdekaan 1957, hingga pembentukan Malaysia pada 1963.</p>
+            <ul class="tag-list"><li>Timeline</li><li>Fakta penting</li></ul>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">🎭</div>
+            <h3 class="index-dark">Seni &amp; Warisan</h3>
+            <p>Kenali Mak Yong, Dondang Sayang, kompang, songket, baju kurung, dan rumah tradisional Melayu.</p>
+            <ul class="tag-list"><li>Busana</li><li>Musik</li><li>Arsitektur</li></ul>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">🍛</div>
+            <h3 class="index-dark">Kuliner</h3>
+            <p>Jelajahi nasi lemak, roti canai, satay, laksa, dan teh tarik melalui kartu menu yang dapat difilter.</p>
+            <ul class="tag-list"><li>Filter</li><li>Pilihan acak</li></ul>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">💬</div>
+            <h3 class="index-dark">Bahasa Melayu</h3>
+            <p>Pelajari frasa sederhana untuk sapaan, perjalanan, dan memesan makanan, lengkap dengan fitur pelafalan browser.</p>
+            <ul class="tag-list"><li>Dropdown</li><li>Text to speech</li></ul>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">🎨</div>
+            <h3 class="index-dark">Galeri</h3>
+            <p>Gunakan kategori untuk menyaring ilustrasi budaya dan buka setiap karya melalui tampilan modal.</p>
+            <ul class="tag-list"><li>Grid</li><li>Modal</li></ul>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">✨</div>
+            <h3 class="index-dark">Interaktif</h3>
+            <p>Uji pengetahuan lewat kuis, berikan voting kategori favorit, dan coba validasi form tanggapan.</p>
+            <ul class="tag-list"><li>Kuis</li><li>Voting</li><li>Form</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="stat-grid reveal">
+          <div class="stat-card"><strong>7</strong>halaman utama</div>
+          <div class="stat-card"><strong>15+</strong>fitur HTML, CSS &amp; JS</div>
+          <div class="stat-card"><strong>100%</strong>desain buatan sendiri</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="split-media reveal">
+          <img src="assets/img/WauBulan.jpg" width="90%" alt="Wau Bulan">
+        </div>
+        <div class="split-copy reveal">
+          <span class="eyebrow">Belajar melalui eksplorasi</span>
+          <h2>Desain bukan hanya indah, tetapi juga membantu memahami isi.</h2>
+          <p>Setiap halaman dirancang dengan hierarki visual yang jelas, gambar vektor lokal, teks singkat, dan interaksi yang relevan dengan tema budaya.</p>
+          <ul class="check-list">
+            <li>Mobile-first dan tetap nyaman di layar desktop.</li>
+            <li>Navigasi dropdown, mode gelap, animasi, dan transisi.</li>
+            <li>Galeri, kuis, voting, pencarian, serta validasi form.</li>
+            <li>Layout flex dan grid dengan fallback untuk browser lama.</li>
+          </ul>
+          <a class="btn btn-secondary" href="galeri.html">Lihat Galeri</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="fact-box reveal">
+          <span class="eyebrow">Fakta budaya acak</span>
+          <p class="fact-text" id="randomFactText">Klik tombol untuk menampilkan fakta budaya Malaysia.</p>
+          <button class="btn btn-primary" id="randomFactButton" type="button">Tampilkan Fakta</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="feature-strip reveal">
+          <div class="feature-strip-inner">
+            <div>
+              <span class="eyebrow" style="color:#f4b942">Siap menguji pengetahuan?</span>
+              <h2>Kuis singkat dengan delapan pertanyaan budaya</h2>
+              <p>Skor dan pesan hasil akan berubah sesuai jawabanmu. Fitur ini menggunakan fungsi, event, kondisi, dan perulangan JavaScript.</p>
+            </div>
+            <a class="btn btn-secondary" href="interaktif.html#kuis">Mulai Kuis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+            <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+          </a>
+          <p>Proyek edukasi Web Dasar yang memperkenalkan kebudayaan Malaysia melalui desain responsif dan interaksi JavaScript.</p>
+        </div>
+        <div>
+          <h3>Jelajahi</h3>
+          <ul class="footer-links">
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="bahasa.html">Bahasa Melayu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Fitur</h3>
+          <ul class="footer-links">
+            <li><a href="galeri.html">Galeri Filter</a></li>
+            <li><a href="interaktif.html#kuis">Kuis Budaya</a></li>
+            <li><a href="interaktif.html#voting">Voting Favorit</a></li>
+            <li><a href="interaktif.html#feedback">Form Tanggapan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dokumentasi</h3>
+          <ul class="footer-links">
+            <li><a href="sumber.html">Daftar sumber</a></li>
+            <li><a href="README.md">Panduan proyek</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Rona Malaysia. Dibuat untuk pembelajaran, bukan situs resmi pemerintah atau pariwisata Malaysia.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

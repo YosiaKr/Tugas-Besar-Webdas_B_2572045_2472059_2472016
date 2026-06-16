@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rona Malaysia - website edukatif interaktif tentang sejarah, bahasa, kuliner, seni, dan warisan budaya Malaysia.">
+  <meta name="theme-color" content="#071a2b">
+  <title>Bahasa Melayu | Rona Malaysia</title>
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Rona Malaysia - Beranda">
+        <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+        <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Aktifkan mode gelap">☾</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka navigasi" aria-controls="mainNav" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="sejarah.html">Sejarah</a></li>
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false">Ragam Budaya ▾</button>
+            <ul class="dropdown-menu">
+              <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+              <li><a href="kuliner.html">Kuliner</a></li>
+              <li><a href="bahasa.html" class="active" aria-current="page">Bahasa Melayu</a></li>
+            </ul>
+          </li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="interaktif.html">Interaktif</a></li>
+          <li><a href="sumber.html">Sumber</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a><span>/</span><strong>Bahasa Melayu</strong></nav>
+          <span class="eyebrow">Kata yang mendekatkan</span>
+          <h1>Belajar frasa Bahasa Melayu secara interaktif</h1>
+          <p>Bahasa Melayu merupakan bahasa kebangsaan Malaysia. Pilih situasi, tampilkan frasa, lalu dengarkan pelafalan jika browser mendukung fitur suara.</p>
+        </div>
+        <img src="assets/img/BahasaMelayu.jpg" width="650px" height="auto" style="border-radius: 20px;" alt="Bahasa Melayu">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="eyebrow">Phrase explorer</span>
+          <h2>Frasa sederhana untuk tiga situasi</h2>
+          <p>Fitur suara menggunakan Web Speech API dengan pengecekan kondisi agar tetap aman pada browser yang tidak mendukungnya.</p>
+        </div>
+        <div class="phrase-toolbar reveal">
+          <label class="sr-only" for="phraseCategory">Pilih kategori frasa</label>
+          <select id="phraseCategory">
+            <option value="sapaan">Sapaan</option>
+            <option value="perjalanan">Perjalanan</option>
+            <option value="makanan">Makanan</option>
+          </select>
+          <button class="btn btn-primary" id="nextPhrase" type="button">Frasa Berikutnya</button>
+        </div>
+        <article class="phrase-card reveal" aria-live="polite">
+          <span class="tag">Bahasa Melayu</span>
+          <h2 class="phrase-main" id="phraseMain">Selamat datang</h2>
+          <p class="phrase-meaning" id="phraseMeaning">Selamat datang</p>
+          <p id="phraseNote">Sapaan untuk menyambut tamu.</p>
+          <div class="phrase-actions">
+            <button class="btn btn-secondary" id="speakPhrase" type="button">🔊 Dengarkan</button>
+            <a class="btn btn-outline" href="interaktif.html#kuis">Uji Pengetahuan</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="eyebrow">Kemiripan dan perbedaan</span>
+          <h2>Serumpun bukan berarti selalu sama</h2>
+          <p>Penutur Indonesia dapat mengenali banyak kosakata Melayu, tetapi terdapat perbedaan penggunaan, ejaan, nuansa, dan konteks.</p>
+        </div>
+        <div class="quote-grid">
+          <article class="card reveal"><div class="card-icon">ID</div><h3 class="index-dark">Indonesia</h3><p>“Apa kabar?”, “stasiun”, “saya ingin”, dan “enak sekali”.</p></article>
+          <article class="card reveal"><div class="card-icon">MY</div><h3  class="index-dark">Malaysia</h3><p>“Apa khabar?”, “stesen”, “saya mahu”, dan “sedap sekali”.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="split-media reveal"><img src="assets/img/WauBulan.jpg" width="500px"></div>
+        <div class="split-copy reveal">
+          <span class="eyebrow">Bahasa &amp; identitas</span>
+          <h2>Bahasa hidup bersama sastra dan seni lisan</h2>
+          <p>Pantun, cerita rakyat, lagu, dan dialog dalam seni pertunjukan menunjukkan bagaimana bahasa menjadi sarana estetika, nasihat, humor, dan ingatan kolektif.</p>
+          <ul class="check-list">
+            <li>Bahasa digunakan dalam urusan resmi dan pendidikan.</li>
+            <li>Pantun hadir dalam berbagai tradisi lisan.</li>
+            <li>Masyarakat Malaysia juga menggunakan beragam bahasa lain.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+            <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+          </a>
+          <p>Proyek edukasi Web Dasar yang memperkenalkan kebudayaan Malaysia melalui desain responsif dan interaksi JavaScript.</p>
+        </div>
+        <div>
+          <h3>Jelajahi</h3>
+          <ul class="footer-links">
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="bahasa.html">Bahasa Melayu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Fitur</h3>
+          <ul class="footer-links">
+            <li><a href="galeri.html">Galeri Filter</a></li>
+            <li><a href="interaktif.html#kuis">Kuis Budaya</a></li>
+            <li><a href="interaktif.html#voting">Voting Favorit</a></li>
+            <li><a href="interaktif.html#feedback">Form Tanggapan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dokumentasi</h3>
+          <ul class="footer-links">
+            <li><a href="sumber.html">Daftar sumber</a></li>
+            <li><a href="README.md">Panduan proyek</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Rona Malaysia. Dibuat untuk pembelajaran, bukan situs resmi pemerintah atau pariwisata Malaysia.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
