@@ -1,5 +1,3 @@
-/* Data used by the interactive pages. Kept external as required. */
-
 var RONA_FACTS = [
   "Malaysia memiliki masyarakat multikultural dengan tradisi Melayu, Tionghoa, India, serta komunitas pribumi Sabah dan Sarawak.",
   "Dondang Sayang memadukan musik, nyanyian, dan pantun yang dilantunkan secara berbalas.",
@@ -39,7 +37,7 @@ var RONA_QUIZ = [
     answer: 2
   },
   {
-    question: "Seni pertunjukan Kelantan yang memadukan lakon, musik, dan gerak disebut...",
+    question: "Seni pertunjukan Kelantan yang memadukan lakon, musik, dan gerak disebut?",
     options: ["Mak Yong", "Wayang Wong", "Kecak", "Ludruk"],
     answer: 0
   },
@@ -49,27 +47,27 @@ var RONA_QUIZ = [
     answer: 3
   },
   {
-    question: "Alat musik perkusi yang sering dimainkan berkelompok dalam perayaan Melayu adalah...",
+    question: "Alat musik perkusi yang sering dimainkan berkelompok dalam perayaan Melayu adalat?",
     options: ["Sape", "Kompang", "Erhu", "Tabla"],
     answer: 1
   },
   {
-    question: "Dondang Sayang dikenal sebagai seni yang memadukan musik dengan...",
+    question: "Dondang Sayang dikenal sebagai seni yang memadukan musik dengat?",
     options: ["Lukisan dinding", "Ukiran batu", "Pantun berbalas", "Pertunjukan boneka"],
     answer: 2
   },
   {
-    question: "Bahasa kebangsaan Malaysia adalah...",
+    question: "Bahasa kebangsaan Malaysia adalat?",
     options: ["Bahasa Melayu", "Bahasa Thai", "Bahasa Jepang", "Bahasa Spanyol"],
     answer: 0
   },
   {
-    question: "Makanan yang menggunakan nasi santan sebagai dasar hidangan adalah...",
+    question: "Makanan yang menggunakan nasi santan sebagai dasar hidangan adalah?",
     options: ["Roti canai", "Nasi lemak", "Cendol", "Satay"],
     answer: 1
   },
   {
-    question: "Pembentukan negara Malaysia tercapai pada...",
+    question: "Pembentukan negara Malaysia tercapai pada?",
     options: ["16 September 1963", "31 Agustus 1957", "16 September 1950", "1 Mei 1965"],
     answer: 0
   }
