@@ -107,7 +107,6 @@
         try {
           window.localStorage.setItem("rona-theme", dark ? "dark" : "light");
         } catch (error) {
-          /* Local storage is optional. */
         }
         refreshIcon();
       };
@@ -331,7 +330,6 @@
   function initPhraseExplorer() {
     var category = byId("phraseCategory");
     var next = byId("nextPhrase");
-    var speak = byId("speakPhrase");
     var main = byId("phraseMain");
     var meaning = byId("phraseMeaning");
     var note = byId("phraseNote");
@@ -360,21 +358,6 @@
         render();
       };
     }
-
-    if (speak) {
-      speak.onclick = function () {
-        if (window.speechSynthesis && window.SpeechSynthesisUtterance) {
-          var utterance = new SpeechSynthesisUtterance(main.textContent || main.innerText);
-          utterance.lang = "ms-MY";
-          window.speechSynthesis.cancel();
-          window.speechSynthesis.speak(utterance);
-        } else {
-          window.alert("Fitur suara belum didukung oleh browser ini.");
-        }
-      };
-    }
-
-    render();
   }
 
   function initQuiz() {
@@ -501,7 +484,6 @@
         window.localStorage.setItem(storageKey, JSON.stringify(counts));
         window.localStorage.setItem(votedKey, voted ? "yes" : "no");
       } catch (error) {
-        /* Demo remains usable in memory. */
       }
     }
 
