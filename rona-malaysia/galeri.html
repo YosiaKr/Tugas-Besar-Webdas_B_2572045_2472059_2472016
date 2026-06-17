@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Rona Malaysia - website edukatif interaktif tentang sejarah, bahasa, kuliner, seni, dan warisan budaya Malaysia.">
+  <meta name="theme-color" content="#071a2b">
+  <title>Galeri | Rona Malaysia</title>
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#mainContent">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Rona Malaysia - Beranda">
+        <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+        <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Aktifkan mode gelap">☾</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka navigasi" aria-controls="mainNav"
+        aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="sejarah.html">Sejarah</a></li>
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false">Ragam Budaya ▾</button>
+            <ul class="dropdown-menu">
+              <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+              <li><a href="kuliner.html">Kuliner</a></li>
+              <li><a href="bahasa.html">Bahasa Melayu</a></li>
+            </ul>
+          </li>
+          <li><a href="galeri.html" class="active" aria-current="page">Galeri</a></li>
+          <li><a href="interaktif.html">Interaktif</a></li>
+          <li><a href="sumber.html">Sumber</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a
+              href="index.html">Beranda</a><span>/</span><strong>Galeri</strong></nav>
+          <span class="eyebrow">Visual budaya</span>
+          <h1>Galeri ilustrasi Rona Malaysia</h1>
+          <p>Seluruh gambar merupakan ilustrasi SVG lokal yang dibuat khusus untuk proyek ini. Filter kategori dan buka
+            modal untuk melihat detail.</p>
+        </div>
+        <img src="assets/img/AboutMalaysia.jpg" width="650px" height="auto" style="border-radius: 20px;" alt="Wau Bulan">
+      </div>
+    </section>
+ 
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar reveal" aria-label="Filter galeri">
+          <button class="filter-btn active" type="button" data-target="galleryGrid" data-filter="all">Semua</button>
+          <button class="filter-btn" type="button" data-target="galleryGrid" data-filter="kuliner">Kuliner</button>
+          <button class="filter-btn" type="button" data-target="galleryGrid" data-filter="seni">Seni</button>
+          <button class="filter-btn" type="button" data-target="galleryGrid" data-filter="tekstil">Tekstil</button>
+          <button class="filter-btn" type="button" data-target="galleryGrid" data-filter="warisan">Arsitektur</button>
+          <button class="filter-btn" type="button" data-target="galleryGrid" data-filter="bahasa">Bahasa</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <article class="gallery-item reveal" data-category="warisan">
+            <img src="assets/img/RumahMalay.jpg" height="350px" alt="Rumah Melayu">
+            <button class="gallery-open" type="button" aria-label="Buka detail Rumah Melayu" data-title="Rumah Melayu"
+              data-image="assets/img/RumahMalay.jpg"
+              data-description="Nama Utama: Rumah Melayu (dengan variasi regional seperti Rumah Melaka, Rumah Perlis, Rumah Negeri Sembilan), Rumah Panjang (Sarawak), dan Rumah Tinggi (Melanau).<br>
+              Material Dominan: Kayu keras tropis (Cengal, Meranti, Jati), bambu, rotan, serta atap dari daun rumbia, nipah, atau ijuk.<br>
+              Ciri Khas Arsitektur: Struktur panggung (stilt house) kolosal, sistem sambungan tanggam dan puting (tanpa paku), serta penggunaan panel dekoratif berukir untuk ventilasi.<br>
+              Nilai Filosofis Utama: Manifestasi hubungan manusia dengan pencipta, alam, dan sesama (Adat Sejati), serta privasi berbasis gender dan hierarki sosial.<br>
+              Fungsi Utama: Hunian adaptif terhadap banjir dan satwa liar, pusat interaksi komunal, serta simbol identitas etnis di Semenanjung dan Borneo.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Warisan</span>
+              <h3>Rumah Melayu</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="tekstil">
+            <img src="assets/img/SongketMlay.jpeg" height="350px" alt="Songket">
+            <button class="gallery-open" type="button" aria-label="Buka detail Songket" data-title="Songket"
+              data-image="assets/img/SongketMlay.jpeg"
+              data-description="Pusat Perkembangan: Industri ini berpusat di Pantai Timur Semenanjung Malaysia, khususnya di negeri Terengganu dan Kelantan.<br>
+              Teknik Pembuatan: Berasal dari kata menyungkit, yaitu teknik menyisipkan benang pakan (emas/perak) ke benang dasar. Penenun tradisional yang mahir mengerjakannya murni dari ingatan dan imajinasi, tanpa menggunakan sketsa.<br>
+              Motif & Filosofi: Mengutamakan unsur flora dan geometri karena pengaruh nilai-nilai Islam. Motif yang paling ikonik adalah Pucuk Rebung (melambangkan ketauhidan dan pentingnya pendidikan sejak dini) serta Tampuk Manggis (menyimbolkan kebaikan dari dalam hati).<br>
+              Penggunaan: Jika dahulu dibuat eksklusif hanya untuk keluarga kerajaan dan bangsawan, kini songket umum digunakan sebagai pakaian pengantin adat Melayu dan sebagai sampin (kain lilitan pinggang) untuk melengkapi Baju Melayu pada acara resmi atau perayaan hari raya.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Tekstil</span>
+              <h3>Songket</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="busana">
+            <img src="assets/img/BajuKrung.jpeg" height="350px" alt="Baju Kurung">
+            <button class="gallery-open" type="button" aria-label="Buka detail Baju Kurung" data-title="Baju Kurung"
+              data-image="assets/img/BajuKrung.jpeg"
+              data-description="Baju Kurung adalah busana tradisional perempuan Melayu yang melambangkan keanggunan dan kesopanan.<br>
+              Secara historis, potongan modern Baju Kurung dikembangkan di Kesultanan Johor pada abad ke-19.<br>
+              Busana ini terdiri dari blus panjang berlengan panjang yang tidak menonjolkan lekuk tubuh, dipadukan dengan rok (kain sarung) berlipat.<br>
+              Kepraktisan dan nilai estetikanya membuat Baju Kurung tetap relevan hingga hari ini, digunakan sebagai pakaian sehari-hari, seragam sekolah dan kerja, hingga busana mewah berbalut sutera saat perayaan Idul Fitri.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Busana</span>
+              <h3>Baju Kurung</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="seni">
+            <img src="assets/img/MakYong.jpeg" height="350px" alt="Mak Yong">
+            <button class="gallery-open" type="button" aria-label="Buka detail Mak Yong" data-title="Mak Yong"
+              data-image="assets/img/MakYong.jpeg"
+              data-description="Mak Yong merupakan seni teater tradisional dan ritual penyembuhan kuno yang berkembang pesat di negeri Kelantan.<br>
+              Pertunjukan ini adalah perpaduan kompleks antara tarian ritmis, nyanyian, drama komedi, dan musik ansambel (didominasi rebab, gendang, dan tetawak).Cerita yang dibawakan biasanya berakar dari mitos kerajaan, roh alam, dan legenda masa lalu.<br>
+              Karena keunikan dan kedalaman nilai budayanya, Mak Yong telah dinobatkan oleh UNESCO sebagai Karya Agung Warisan Budaya Lisan dan Nonbendawi Manusia.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Seni</span>
+              <h3>Mak Yong</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="musik">
+            <img src="assets/img/Kompang.jpeg" height="350px" alt="Kompang">
+            <button class="gallery-open" type="button" aria-label="Buka detail Kompang" data-title="Kompang"
+              data-image="assets/img/Kompang.jpeg"
+              data-description="Kompang adalah alat musik perkusi tradisional Melayu sejenis rebana atau gendang pipih yang dimainkan dengan cara dipukul menggunakan tangan.<br>
+              Kompang biasanya dimainkan secara berkelompok untuk mengiringi acara perayaan, seperti pernikahan adat atau penyambutan tamu kehormatan.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Musik</span>
+              <h3>Kompang</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="kuliner">
+            <img src="assets/img/NasiLemak.jpeg" height="350px" alt="Nasi Lemak">
+            <button class="gallery-open" type="button" aria-label="Buka detail Nasi Lemak" data-title="Nasi Lemak"
+              data-image="assets/img/NasiLemak.jpeg"
+              data-description="Nasi Lemak adalah hidangan nasional kebanggaan Malaysia berupa nasi harum yang dimasak dengan santan kelapa dan daun pandan.<br>
+              Sajian klasiknya selalu didampingi dengan sambal manis-pedas, ikan teri goreng, kacang tanah panggang, irisan mentimun, dan telur rebus.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Kuliner</span>
+              <h3>Nasi Lemak</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="kuliner">
+            <img src="assets/img/RotiCanai.jpeg" height="350px" alt="Roti Canai">
+            <button class="gallery-open" type="button" aria-label="Buka detail Roti Canai" data-title="Roti Canai"
+              data-image="assets/img/RotiCanai.jpeg"
+              data-description="Roti Canai adalah roti pipih berlapis yang merupakan hasil akulturasi budaya India-Muslim (Mamak) di Malaysia.<br>
+              Roti ini dibuat dengan teknik putar dan lipat sebelum dipanggang di wajan datar, menghasilkan tekstur renyah di luar dan lembut di dalam.<br>
+              Biasanya disantap bersama kuah kari atau dal.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Kuliner</span>
+              <h3>Roti Canai</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="kuliner">
+            <img src="assets/img/SateMlay.jpg" height="350px" alt="Satay">
+            <button class="gallery-open" type="button" aria-label="Buka detail Satay" data-title="Satay"
+              data-image="assets/img/SateMlay.jpg"
+              data-description="Satay atau yang lebih di kenal sebagai sate di indonesia adalah potongan daging (umumnya ayam, sapi, atau kambing) yang ditusuk dengan lidi kelapa lalu dipanggang di atas arang.<br>
+              Sate khas Malaysia disajikan bersama bumbu kacang yang manis dan gurih, potongan bawang merah, mentimun, serta ketupat.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Kuliner</span>
+              <h3>Satay</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="kuliner">
+            <img src="assets/img/CurryLaksa.jpg" height="350px" alt="Laksa">
+            <button class="gallery-open" type="button" aria-label="Buka detail Laksa" data-title="Laksa"
+              data-image="assets/img/CurryLaksa.jpg"
+              data-description="laksa adalah hidangan mi berkuah kaya rempah yang memiliki berbagai variasi daerah.<br>
+              Dua jenis yang paling terkenal di Malaysia adalah Asam Laksa dari Penang (kuah ikan berbumbu asam jawa yang segar) dan Curry Laksa (kuah kari bersantan yang kental dan gurih).">＋</button>
+            <div class="gallery-overlay"><span class="tag">Kuliner</span>
+              <h3>Laksa</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="kuliner">
+            <img src="assets/img/TehTarik.jpg" height="350px" alt="Teh Tarik">
+            <button class="gallery-open" type="button" aria-label="Buka detail Teh Tarik" data-title="Teh Tarik"
+              data-image="assets/img/TehTarik.jpg"
+              data-description="Teh Tarik adalah minuman teh hitam yang dicampur dengan susu kental manis.<br>
+              Dinamakan Teh Tarik karena proses pembuatannya yang unik, yakni dituang (ditarik) berkali-kali dari satu gelas ke gelas lain untuk mendinginkan suhu sekaligus menciptakan buih tebal di permukaannya.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Kuliner</span>
+              <h3>Teh Tarik</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="bahasa">
+            <img src="assets/img/BahasaMelayu.jpg" height="350px" alt="Bahasa Melayu">
+            <button class="gallery-open" type="button" aria-label="Buka detail Bahasa Melayu" data-title="Bahasa Melayu"
+              data-image="assets/img/BahasaMelayu.jpg"
+              data-description="Bahasa Austronesia yang menjadi bahasa resmi dan bahasa nasional (lingua franca) di Malaysia.<br>
+              Bahasa ini memiliki sejarah panjang sebagai bahasa persatuan di kawasan Nusantara dan menyerap banyak kosa kata dari bahasa Sanskerta, Arab, dan Eropa">＋</button>
+            <div class="gallery-overlay"><span class="tag">Bahasa</span>
+              <h3>Bahasa Melayu</h3>
+            </div>
+          </article>
+          <article class="gallery-item reveal" data-category="kraf">
+            <img src="assets/img/WauBulan.jpg" height="350px" alt="Wau Bulan">
+            <button class="gallery-open" type="button" aria-label="Buka detail Wau Bulan" data-title="Wau Bulan"
+              data-image="assets/img/Waubulan.jpg"
+              data-description="Layang-layang tradisional bertubuh besar dan bermotif hiasan flora yang rumit, khas dari negeri Kelantan.<br>
+              Ciri utamanya adalah bagian ekor yang melengkung menyerupai bulan sabit.<br>
+              Pada zaman dahulu, Wau Bulan sering diterbangkan oleh petani setelah musim panen sebagai hiburan.">＋</button>
+            <div class="gallery-overlay"><span class="tag">Kraf</span>
+              <h3>Wau Bulan</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true"
+      aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Tutup modal">×</button>
+        <img id="modalImage" src="assets/img/AboutMalaysia.jpg" alt="Detail galeri">
+        <div class="modal-body">
+          <h2 id="modalTitle">Detail</h2>
+          <p id="modalText"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+            <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+          </a>
+          <p>Proyek edukasi Web Dasar yang memperkenalkan kebudayaan Malaysia melalui desain responsif dan interaksi
+            JavaScript.</p>
+        </div>
+        <div>
+          <h3>Jelajahi</h3>
+          <ul class="footer-links">
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="bahasa.html">Bahasa Melayu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Fitur</h3>
+          <ul class="footer-links">
+            <li><a href="galeri.html">Galeri Filter</a></li>
+            <li><a href="interaktif.html#kuis">Kuis Budaya</a></li>
+            <li><a href="interaktif.html#voting">Voting Favorit</a></li>
+            <li><a href="interaktif.html#feedback">Form Tanggapan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dokumentasi</h3>
+          <ul class="footer-links">
+            <li><a href="sumber.html">Daftar sumber</a></li>
+            <li><a href="README.md">Panduan proyek</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Rona Malaysia. Dibuat untuk pembelajaran, bukan situs resmi
+          pemerintah atau pariwisata Malaysia.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>

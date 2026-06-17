@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rona Malaysia - website edukatif interaktif tentang sejarah, bahasa, kuliner, seni, dan warisan budaya Malaysia.">
+  <meta name="theme-color" content="#071a2b">
+  <title>Kuliner | Rona Malaysia</title>
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Rona Malaysia - Beranda">
+        <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+        <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Aktifkan mode gelap">☾</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka navigasi" aria-controls="mainNav" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="sejarah.html">Sejarah</a></li>
+          <li class="dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false">Ragam Budaya ▾</button>
+            <ul class="dropdown-menu">
+              <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+              <li><a href="kuliner.html" class="active" aria-current="page">Kuliner</a></li>
+              <li><a href="bahasa.html">Bahasa Melayu</a></li>
+            </ul>
+          </li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="interaktif.html">Interaktif</a></li>
+          <li><a href="sumber.html">Sumber</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a><span>/</span><strong>Kuliner</strong></nav>
+          <span class="eyebrow">Ragam rasa</span>
+          <h1>Kuliner Malaysia, perjumpaan rasa dalam satu meja</h1>
+          <p>Makanan Malaysia mencerminkan pertukaran budaya dan kreativitas masyarakat. Gunakan filter untuk melihat kategori hidangan.</p>
+        </div>
+        <img src="assets/img/NasiLemak.jpeg" width="650px" height="auto" style="border-radius: 20px;" alt="Nasi Lemak">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="eyebrow">Menu budaya</span>
+          <h2>Pilih kategori atau biarkan website memilih secara acak</h2>
+          <p>Filter menggunakan atribut data, event klik, perulangan, dan kondisi JavaScript.</p>
+        </div>
+        <div class="filter-bar reveal" aria-label="Filter makanan">
+          <button class="filter-btn active" type="button" data-target="foodGrid" data-filter="all">Semua</button>
+          <button class="filter-btn" type="button" data-target="foodGrid" data-filter="utama">Makanan Utama</button>
+          <button class="filter-btn" type="button" data-target="foodGrid" data-filter="jajanan">Jajanan</button>
+          <button class="filter-btn" type="button" data-target="foodGrid" data-filter="minuman">Minuman</button>
+          <button class="btn btn-secondary btn-small" id="randomFoodButton" type="button">Pilihkan Untukku ✦</button>
+        </div>
+        <div class="food-grid" id="foodGrid">
+          <article class="food-card reveal" data-category="utama">
+            <img src="assets/img/NasiLemak.jpeg" height="350px" alt="Nasi Lemak">
+            <div class="food-card-content"><span class="tag">Makanan utama</span><h3>Nasi Lemak</h3><p>Nasi beraroma santan yang umum disajikan bersama sambal, ikan bilis, kacang, mentimun, dan telur.</p><span class="price-note">Rasa: gurih &amp; pedas</span></div>
+          </article>
+          <article class="food-card reveal" data-category="jajanan">
+            <img src="assets/img/RotiCanai.jpeg" height="350px" alt="Roti canai dan kari">
+            <div class="food-card-content"><span class="tag">Jajanan</span><h3>Roti Canai</h3><p>Roti pipih berlapis yang biasa disantap bersama kari atau kuah dal, populer untuk sarapan dan makan ringan.</p><span class="price-note">Tekstur: renyah &amp; lembut</span></div>
+          </article>
+          <article class="food-card reveal" data-category="jajanan">
+            <img src="assets/img/SateMlay.jpg" height="350px" alt="Satay">
+            <div class="food-card-content"><span class="tag">Jajanan</span><h3>Satay</h3><p>Potongan daging berbumbu yang dipanggang pada tusuk dan sering disajikan dengan saus kacang serta pelengkap.</p><span class="price-note">Aroma: panggang &amp; rempah</span></div>
+          </article>
+          <article class="food-card reveal" data-category="utama">
+            <img src="assets/img/CurryLaksa.jpg" height="350px" alt="Laksa">
+            <div class="food-card-content"><span class="tag">Makanan utama</span><h3>Laksa</h3><p>Hidangan mi berkuah dengan variasi regional. Komposisi kuah dan pelengkap dapat berbeda antarwilayah.</p><span class="price-note">Rasa: kaya &amp; berlapis</span></div>
+          </article>
+          <article class="food-card reveal" data-category="minuman">
+            <img src="assets/img/TehTarik.jpg" height="350px" alt="Teh Tarik">
+            <div class="food-card-content"><span class="tag">Minuman</span><h3>Teh Tarik</h3><p>Teh susu yang dituangkan berulang dari ketinggian untuk mencampur minuman dan menghasilkan lapisan buih.</p><span class="price-note">Rasa: manis &amp; creamy</span></div>
+          </article>
+          <article class="food-card reveal" data-category="jajanan">
+            <img src="assets/img/AnekaKuihMY.jpeg" height="350px" alt="Kuih Malay">
+            <div class="food-card-content"><span class="tag">Jajanan</span><h3>Aneka Kuih</h3><p>Beragam kue tradisional hadir dalam warna, tekstur, bahan, dan teknik pembuatan yang berbeda.</p><span class="price-note">Karakter: manis &amp; beragam</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container split reverse">
+        <div class="split-media reveal"><img src="assets/img/PembuatanTehTrik.JPG" width="650px" height="auto" style="border-radius: 20px;" alt="Pembuatan Teh Tarik"></div>
+        <div class="split-copy reveal">
+          <span class="eyebrow">Budaya sarapan</span>
+          <h2>Meja makan sebagai ruang sosial</h2>
+          <p>Nasi lemak, roti canai, dan teh tarik bukan hanya menu. Kebiasaan makan bersama juga menjadi ruang pertemuan lintas latar belakang dalam kehidupan sehari-hari.</p>
+          <div class="callout"><h3>Eksplorasi selanjutnya</h3><p>Coba bandingkan bahan, teknik memasak, dan cara penyajian setiap hidangan dengan makanan serumpun di Indonesia.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/img/logo-mark.svg" alt="Logo Rona Malaysia">
+            <span>Rona Malaysia<small>Jejak budaya serumpun</small></span>
+          </a>
+          <p>Proyek edukasi Web Dasar yang memperkenalkan kebudayaan Malaysia melalui desain responsif dan interaksi JavaScript.</p>
+        </div>
+        <div>
+          <h3>Jelajahi</h3>
+          <ul class="footer-links">
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="warisan.html">Warisan &amp; Seni</a></li>
+            <li><a href="kuliner.html">Kuliner</a></li>
+            <li><a href="bahasa.html">Bahasa Melayu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Fitur</h3>
+          <ul class="footer-links">
+            <li><a href="galeri.html">Galeri Filter</a></li>
+            <li><a href="interaktif.html#kuis">Kuis Budaya</a></li>
+            <li><a href="interaktif.html#voting">Voting Favorit</a></li>
+            <li><a href="interaktif.html#feedback">Form Tanggapan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dokumentasi</h3>
+          <ul class="footer-links">
+            <li><a href="sumber.html">Daftar sumber</a></li>
+            <li><a href="README.md">Panduan proyek</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Rona Malaysia. Dibuat untuk pembelajaran, bukan situs resmi pemerintah atau pariwisata Malaysia.</p>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas">↑</button>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
